@@ -22,6 +22,12 @@ class Main {
         
         System.out.println(new RationalNumber(1, 2).divideByInt(2));
         System.out.println(new RationalNumber(3, 4).divideByInt(3));
+
+        System.out.println(new RationalNumber(1, 2).compareTo(new RationalNumber(1, 2)));
+        System.out.println(new RationalNumber(1, 2).compareTo(new RationalNumber()));
+        System.out.println(new RationalNumber(3, 4).compareTo(new RationalNumber(1, 2)));
+
+
     }
 
 }

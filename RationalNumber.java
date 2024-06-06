@@ -1,6 +1,6 @@
 import java.math.*;
 
-public class RationalNumber extends SpecialNumber{
+public class RationalNumber extends SpecialNumber implements Comparable{
     
     int numerator;
     int denominator;
@@ -96,6 +96,27 @@ public class RationalNumber extends SpecialNumber{
     @Override 
     public String toString() {
         return numerator + "/" + denominator;
+    }
+
+    @Override
+    public int compareTo(Object obj) {
+
+        RationalNumber frac = (RationalNumber) obj;
+        double self_value = (double)numerator / (double)denominator;
+        double frac_value = (double)frac.numerator / (double)frac.denominator;
+
+
+        System.out.println(self_value + " " + frac_value);
+        if (self_value == frac_value) {
+            return 0;
+        }
+        else if (self_value > frac_value) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+
     }
 
     public static int findLCD(int x, int y) {
