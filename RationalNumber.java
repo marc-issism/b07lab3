@@ -49,11 +49,16 @@ public class RationalNumber extends SpecialNumber{
     }
 
     @Override
-    public SpecialNumber divideByInt(int divisor) {
+    public SpecialNumber divideByInt(int divisor) throws Lab3Exception{
 
-        //implement divisor
+        if (divisor == 0) {
+            throw new Lab3Exception("Cannot divide by zero");
+        }
 
-        return null;
+        denominator = denominator * divisor;
+        this.simplify();
+
+        return this;
     }
 
     // Implement Comparable
