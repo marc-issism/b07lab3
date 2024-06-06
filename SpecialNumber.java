@@ -2,8 +2,8 @@ import java.util.List;
 
 public abstract class SpecialNumber {
 
-    abstract SpecialNumber add(SpecialNumber spec_num);
-    abstract SpecialNumber divideByInt(int divisor);
+    abstract SpecialNumber add(SpecialNumber spec_num) throws Lab3Exception;
+    abstract SpecialNumber divideByInt(int divisor) throws Lab3Exception;
 
     public SpecialNumber computerAverage(List<SpecialNumber> spec_nums) throws Lab3Exception {
 

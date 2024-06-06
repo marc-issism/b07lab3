@@ -15,6 +15,10 @@ class Main {
         n5.simplify();
         
         System.out.println(n2 + " " + n3 + " " + n4 + " " + n5);
+
+        System.out.println(RationalNumber.findLCD(3, 4));
+
+        System.out.println(new RationalNumber(3, 4).add(new RationalNumber(2, 3)));
         
     }
 

@@ -8,7 +8,7 @@ public class RationalNumber extends SpecialNumber{
     // Empty constructor fraction = 1/1
     public RationalNumber() {
         super();
-        
+
         numerator = 1;
         denominator = 1;
     }
@@ -26,11 +26,26 @@ public class RationalNumber extends SpecialNumber{
     }
 
     @Override
-    public SpecialNumber add(SpecialNumber spec_num) {
+    public SpecialNumber add(SpecialNumber spec_num) throws Lab3Exception{
 
-        // implement add
+        if (!(spec_num instanceof RationalNumber)) {
+            throw new Lab3Exception("Cannot add an incompatible type");
+        }
 
-        return null;
+        RationalNumber frac = (RationalNumber) spec_num;
+        
+        RationalNumber result = new RationalNumber();
+
+        RationalNumber sumand1 = new RationalNumber(numerator, denominator);
+        RationalNumber sumand2 = new RationalNumber(frac.numerator, frac.denominator);
+
+        int lcd = findLCD(sumand1.denominator, sumand2.denominator);
+        result.numerator = (sumand1.numerator * (lcd / sumand1.denominator) + sumand2.numerator * (lcd / sumand2.denominator));
+        result.denominator = lcd;
+
+        result.simplify();
+
+        return result;
     }
 
     @Override
@@ -81,7 +96,7 @@ public class RationalNumber extends SpecialNumber{
     public static int findLCD(int x, int y) {
 
         for (int i = 2; i <= x * y; i++) {
-            if ((i % x == 0) && (i % y == 0)) {
+            if ((i % x == 0 || x % i == 0) && (i % y == 0 || y % i == 0)) {
                 return i;
             }
         }
