@@ -27,6 +27,11 @@ class Main {
         System.out.println(new RationalNumber(1, 2).compareTo(new RationalNumber()));
         System.out.println(new RationalNumber(3, 4).compareTo(new RationalNumber(1, 2)));
 
+        System.out.println(new ComplexNumber(1, 1).hashCode() + " " + new ComplexNumber(0, 2).hashCode());
+        System.out.println(new ComplexNumber(2, 2).equals(new ComplexNumber(0, 3)));
+        System.out.println(new ComplexNumber(2, 2).equals(new ComplexNumber(2, 2)));
+        System.out.println(new ComplexNumber(2, 2).compareTo(new ComplexNumber(3, 2)));
+
 
     }
 

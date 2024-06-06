@@ -113,9 +113,8 @@ public class RationalNumber extends SpecialNumber implements Comparable{
         else if (self_value > frac_value) {
             return 1;
         }
-        else {
-            return -1;
-        }
+        
+        return -1;
 
     }
 
