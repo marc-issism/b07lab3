@@ -1,6 +1,4 @@
-import java.math.*;
-
-public class RationalNumber extends SpecialNumber implements Comparable{
+public class RationalNumber extends SpecialNumber implements Comparable<Object> {
     
     int numerator;
     int denominator;
@@ -42,8 +40,6 @@ public class RationalNumber extends SpecialNumber implements Comparable{
         int lcd = findLCD(sumand1.denominator, sumand2.denominator);
         result.numerator = (sumand1.numerator * (lcd / sumand1.denominator) + sumand2.numerator * (lcd / sumand2.denominator));
         result.denominator = lcd;
-
-        result.simplify();
 
         return result;
     }

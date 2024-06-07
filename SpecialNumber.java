@@ -5,7 +5,7 @@ public abstract class SpecialNumber {
     abstract SpecialNumber add(SpecialNumber spec_num) throws Lab3Exception;
     abstract SpecialNumber divideByInt(int divisor) throws Lab3Exception;
 
-    public SpecialNumber computerAverage(List<SpecialNumber> spec_nums) throws Lab3Exception {
+    public SpecialNumber computeAverage(List<SpecialNumber> spec_nums) throws Lab3Exception {
 
         if (spec_nums == null || spec_nums.size() == 0) {
             throw new Lab3Exception("List cannot be empty");

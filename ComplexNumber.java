@@ -1,6 +1,4 @@
-import java.math.*;
-
-public class ComplexNumber extends SpecialNumber implements Comparable {
+public class ComplexNumber extends SpecialNumber implements Comparable<Object> {
     
     double real;
     double imaginary;
